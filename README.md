@@ -22,3 +22,16 @@ The end result was that every developer was able to come out with a new idea <br
 and they demonstrated their amazing ideas in front of everyone which was quite <br>
 a meaningful session overall.
 
+
+# User-Interface : 
+
+Landing Page : 
+
+![image](https://github.com/user-attachments/assets/dc5ddfe2-904c-4470-9dc9-1245af3b9c46)
+
+Actual Timer : 
+
+![image](https://github.com/user-attachments/assets/033b6f65-cdac-47c7-87fc-d05e5f9e685f)
+
+Get your hands on with this and feel provide any suggestions or feedback regarding the same.
+
