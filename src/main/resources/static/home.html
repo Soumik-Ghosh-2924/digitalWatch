@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Set Timer</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #f8f9fa, #e9ecef);
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #495057;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .input-group {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        input[type="number"] {
+            width: 80px;
+            padding: 10px;
+            border: 2px solid #ced4da;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 1rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+    </style>
+    <script>
+        let hours, minutes;
+
+        function setTimer() {
+            hours = document.getElementById('hoursInput').value || 0;
+            minutes = document.getElementById('minutesInput').value || 0;
+
+            if (hours == 0 && minutes == 0) {
+                alert("Please set a valid time.");
+                return;
+            }
+
+            alert(`Timer set for ${hours} hours and ${minutes} minutes.`);
+        }
+
+        function startTimer() {
+            if (hours == null || minutes == null) {
+                alert("Please set the timer first.");
+                return;
+            }
+            const query = `?hours=${hours}&minutes=${minutes}`;
+            window.location.href = `timer.html${query}`;
+        }
+    </script>
+</head>
+<body>
+    <h1>Set Timer</h1>
+    <div class="container">
+        <div class="input-group">
+            <label for="hoursInput">Hours:</label>
+            <input type="number" id="hoursInput" min="0" placeholder="0" />
+        </div>
+        <div class="input-group">
+            <label for="minutesInput">Minutes:</label>
+            <input type="number" id="minutesInput" min="0" placeholder="0" />
+        </div>
+        <button class="btn btn-primary" onclick="setTimer()">Set Timer</button>
+        <button class="btn btn-primary" onclick="startTimer()">Start</button>
+    </div>
+</body>
+</html>
